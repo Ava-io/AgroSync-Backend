@@ -1,0 +1,8 @@
+export const createFarmTable = `
+CREATE TABLE IF NOT EXISTS farm(
+id SERIAL PRIMARY KEY,
+name VARCHAR(225) NOT NULL,
+address VARCHAR(225) NOT NULL,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
+`;
