@@ -11,6 +11,8 @@ import { createEquipmentTable } from "../model/CreateEquipmentTable.js";
 import { createHealthRecordTable } from "../model/CreateHealthRecordsTable.js";
 import { createFeedingScheduleTable } from "../model/CreateFeedingScheduleTable.js";
 import { createTransactionTable } from "../model/CreateTransactionTable.js";
+import { createLivestockTable } from "../model/CreateLivestockTable.js";
+import { createDiseaseDetectionTable } from "../model/CreateDiseaseDetectionTable.js";
 
 dotnev.config();
 
@@ -48,6 +50,12 @@ export const initDb = async () => {
 
     await client.query(createTransactionTable);
     console.log("Transaction created successfully");
+
+    await client.query(createLivestockTable);
+    console.log("Livestock created successfully");
+
+    await client.query(createDiseaseDetectionTable);
+    console.log("Disease Detection Table created successfully");
     // await client.query(removeFirstNameColumn);
     // console.log("First name removed successfully");
 
