@@ -7,6 +7,8 @@ import healthRecordRoute from "./routes/Admin/healthRecord.js";
 import feedingScheduleRoute from "./routes/Admin/feedingSchedule.js";
 import transactionRoute from "./routes/Admin/transaction.js";
 import livestockRoute from "./routes/Admin/livestock.js";
+import diseaseRoute from "./routes/Admin/disease.js";
+import equipRoute from "./routes/Admin/equipmentUse.js";
 
 dotenv.config();
 
@@ -22,7 +24,8 @@ app.use("/healthrecord", healthRecordRoute);
 app.use("/schedule", feedingScheduleRoute);
 app.use("/transaction", transactionRoute);
 app.use("/livestock", livestockRoute);
-
+app.use("/disease", diseaseRoute);
+app.use("/equipUse", equipRoute);
 app.listen(port, () => {
   console.log(`My server is running at https://localhost:${port}`);
 });

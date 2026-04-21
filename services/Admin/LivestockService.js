@@ -81,12 +81,6 @@ export const getLivestockId = async (req, res) => {
   try {
     const id = parseInt(req.params.id);
 
-    const getLivestockId = await pool.query(
-      `SELECT * FROM livestock WHERE id = $1`,
-      [id],
-    );
-    console.log(getLivestockId);
-
     const idExists = await pool.query(`SELECT * FROM livestock WHERE id = $1`, [
       id,
     ]);
@@ -94,6 +88,12 @@ export const getLivestockId = async (req, res) => {
     if (idExists.rows.length === 0) {
       return errorResponse(res, 404, "Livestock not found");
     }
+
+    const getLivestockId = await pool.query(
+      `SELECT * FROM livestock WHERE id = $1`,
+      [id],
+    );
+    console.log(getLivestockId);
 
     return successResponse(
       res,
@@ -171,10 +171,9 @@ export const delLivestock = async (req, res) => {
     );
     console.log(delLivestock);
 
-    const idExists = await pool.query(
-      "SELECT * FROM livestock WHERE id = $1",
-      [id],
-    );
+    const idExists = await pool.query("SELECT * FROM livestock WHERE id = $1", [
+      id,
+    ]);
 
     console.log("check if id exists", idExists);
 
