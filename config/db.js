@@ -2,7 +2,7 @@ import dotnev from "dotenv";
 import pg from "pg";
 import { createUserTable } from "../model/CreateUsersTable.js";
 import { createFarmTable } from "../model/CreateFarmTable.js";
-import {} from // removeFirstNameColumn,
+import { addCreatedatColumn } from // removeFirstNameColumn,
 // removeLastNameColumnn,
 // removePhoneColumn,
 "../model/CreateAlterTable.js";
@@ -60,6 +60,9 @@ export const initDb = async () => {
 
     await client.query(createEquipmentUseTable);
     console.log("Equipment Use table created successfully");
+
+    await client.query(addCreatedatColumn);
+    console.log("Created at added successfully");
     // await client.query(removeFirstNameColumn);
     // console.log("First name removed successfully");
 

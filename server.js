@@ -9,13 +9,14 @@ import transactionRoute from "./routes/Admin/transaction.js";
 import livestockRoute from "./routes/Admin/livestock.js";
 import diseaseRoute from "./routes/Admin/disease.js";
 import equipRoute from "./routes/Admin/equipmentUse.js";
+import recordTransactionRoute from "./routes/Admin/reccordtransaction.js";
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT;
 
-app.use(express.json());
+
 
 app.use("/auth", authRoutes);
 app.use("/crop", cropRoute);

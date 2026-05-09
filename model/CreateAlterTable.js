@@ -1,6 +1,6 @@
 // export const removeFirstNameColumn = `
 // ALTER TABLE users
-// DROP COLUMN first_name 
+// DROP COLUMN first_name
 // `;
 
 // // export const removeLastNameColumnn = `
@@ -11,4 +11,9 @@
 export const removePhoneColumn = `
 ALTER TABLE users
 DROP COLUMN phone_number
+`;
+
+export const addCreatedatColumn = `
+ALTER TABLE equipment_use
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 `;
